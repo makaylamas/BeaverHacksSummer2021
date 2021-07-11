@@ -57,9 +57,22 @@ def game():
         print("You meet the party at the edge of town, ready for battle.")
         input("Press enter to continue")
 
-        print("The raiding party")
-        
-        play_again = input("Would you like to play again, " + name + "?")
+        print("The raiding party reaches their destination as the sun is at its highest peak.") 
+
+        # the raid
+
+        if weapon_choice == 1:
+            print("The tension of anticipation builds with the clank of weapons against metal. You twist your axe in your hand, awaiting the battle horn")    
+        elif weapon_choice == 2:
+           print("The tension of anticipation builds with the clank of weapons against metal. You unsheath your sword as you step quietly through trees, awaiting the battle horn.")
+        else:
+           print("The tension of anticipation builds with the clank of weapons against metal echoing through the valley. You nock an arrow, awaiting the battle horn")
+
+        print("The battle horn sounds, the voices of war erupting in unison as the party pushes onwards.")
+            # game over when health == 0 or reputation == 0 
+
+
+        play_again = input("Would you like to play again, " + name + "? [yes/no]")
         if play_again == "yes" or "y":
             game()
         else:
