@@ -1,27 +1,59 @@
-def axe():
+def axe(health, reputation):
     # battle choices for weapon 1: axe
-    pass
+    print("You charge into the village with your fellow warriors, taking no prisoners. \n Then you come upon a wounded enemy; they weakly swing their weapon in an attempt to fight.")
+    battle_choice1 = ("Do you: \n 1. Laugh and continue on your way. \n 2. Take pity and end his life.")
+    if battle_choice1 == 1:
+        reputation = reputation + 2
+        print(reputation)
+        print(health)
+        print("You continue past them, heading towards the Great Hall. You are intercepted by an enemy.")
+        print("One raises his weapon to slash you across the torso.")
+        battle_choice2 = input("What do you do?: \n 1. Move away \n 2. Attempt to counter his attack")
+        if battle_choice2 == 1:
+            print("The edge of his blade grazes your side. But another enemy comes from behind and slashes you across the back. [You lose 7 health]")
+            health = health - 7
+            print(health)
+            battle_choice3 = input("You are now bleeding. What do you do? \n 1. Kill them both. \n 2. Kill one and hope for aid. \n 3. Run")
+            if battle_choice3 == 1:
+                print("You swing your axe in one swift motion, ending the first man's life. You turn your attention to the other and land the final blow just as the horn of battle sounds.")
+                print("The raid has ended. You have survived. Good work Viking.")
+            elif battle_choice3 == 2:
+                print("You make quick work of the first enemy. Just as you turn to deal with the second man, he attacks stabbing you in the stomach.")
 
-def sword():
+                print("You hear the horn of battle sound as you drop to your knees.")
+                health = health - health
+                print(health)
+                print("You fought well Viking. May the Valkyries carry you home to Valhalla.")
+            else:
+                print("You ran away. You have been labeled a traitor and a coward.")
+    else:
+        print("You ")
+
+def sword(health, reputation):
     # battle choices for weapon 2: sword
+    health = health
+    reputation = reputation
    pass
 
-def longbow():
+def longbow(health, reputation):
+    health = health
+    reputation = reputation
+    
     # battle choices for weapon 3: longbow
     pass
 
 
 def game():
-    while True:
+        health = 20
+        reputation = 
+        position = None
+
         print("Welcome Warrior")
         name = input("What is your name?")
         print(name + ", you have been chosen by your Earl to join the raid of a neighboring territory.")
 
         # the beginning
-        health = 100
-        reputation = 50
-        position = None
-
+        
         weapon_choice = input("Please choose your weapon: \n 1. Axe \n 2. Sword \n 3. Longbow ")
         if weapon_choice == 1:
             position = "Forward Assault"
@@ -85,11 +117,11 @@ def game():
          
 
         if weapon_choice == 1:
-           axe()
+            axe(health, reputation)
         elif weapon_choice == 2:
-            sword()
+            sword(health, reputation)
         else:
-            longbow()
+            longbow(health, reputation)
 
 
         # play again
