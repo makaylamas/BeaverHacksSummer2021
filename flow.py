@@ -51,18 +51,18 @@ def game():
 
         # the raid
 
-        if weapon_choice == 1:
+        if weapon_choice == 1:  # axe
             print("The tension of anticipation builds with the clank of weapons against metal. You twist your axe in your hand, awaiting the battle horn")    
-        elif weapon_choice == 2:
+        elif weapon_choice == 2:  # sword
            print("The tension of anticipation builds with the clank of weapons against metal. You unsheath your sword as you step quietly through trees, awaiting the battle horn.")
-        elif weapon_choice == 3:
+        elif weapon_choice == 3:  # longbow
            print("The tension of anticipation builds with the clank of weapons against metal echoing through the valley. You nock an arrow, awaiting the battle horn")
 
         print("The battle horn sounds, the voices of war erupting in unison as the party pushes onwards.")
         print("Your current health is:", health)
         print("Your current reputaiton is:", reputation)
 
-        if weapon_choice == 1:
+        if weapon_choice == 1:       # axe
             print("You charge into the village with your fellow warriors, taking no prisoners. \n Then you come upon a wounded enemy; they weakly swing their weapon in an attempt to fight.")
             battle_choice1 = int(input("Do you: \n 1. Laugh and continue on your way. \n 2. Take pity and end his life."))
             if battle_choice1 == 1:
@@ -104,16 +104,60 @@ def game():
                     print("You join your fellow warriors in battle against the enemy.")
                     print("Together you charge at him, drawing blood with each swing.")
                     print("The enemy makes contact, slashing you across the chest with is axe.")
-                    print("You fall to your knees in defeat.")
+                    health -= health
+                    print("You fall to your knees as the horn of battle sounds.")
                     print("You fought well Viking. May the Valkyries carry you home to Valhalla.")
                 elif battle_choice4 == 2:
                     print("You know your fellow warriors well and turn your attention to the spoils of the village.")
-                    print("")
+                    print("You enter an empty home. You rummage through the rooms.")
+                    print("You have found gold. You pocket it as the horn of battle sounds.")
+                    print("The raid has ended. You have survived. Good work Viking.")
+
         elif weapon_choice == 2:
-            print("stuff1")
+            # sword
+            print("You continue quietly through the woods surrounding the village. You come upon a house.")
+            print("You are behind it. In the distance you hear the cries of the other villagers intermixed with the sounds of victory.")
+            print("You enter the home in search of treasure and find a villager hiding in the corner.")
+            battle_choice5 = int(input("Do you: \n 1. Let him live, but take his gold.  \n 2. Kill him and take his gold."))
+            if battle_choice5 == 1:
+                print("You place a finger to your lips to tell the villager to stay silent as you rummage throug his home, pocketing any treaure you find.")
+                reputation -= 8
+                print("Your current reputaiton is:", reputation)
+                print("The horn of battle sounds throughout the village as the battle ends.")
+                print("The raid has ended. You have survived. Good work Viking.")
+            elif battle_choice5 == 2:
+                print("You make quick work of him and go around the home pocketing any treasure you find.")
+                reputation +=8
+                print("You step out of the home. However, you have let your guard down.")
+                print("An enemy runs his sword through you. You collapse to the ground as the horn of battle sounds.")
+                health -= health
+                print("Your current health is:", health)
+                print("Your current reputaiton is:", reputation)
+                print("Your greed has caused your death.")
+
 
         elif weapon_choice == 3: 
-            print("stuff")
+            # longbow
+            print("You draw your arrow back, awaiting the command from your leader.")
+            print("The battle rages on below. You see the mass of bodies, hear the clang of metal against metal.")
+            print("You are command to shot your arrow. But you have no clear shot and cannot kill an enemy without sacrificing one of your friends.")
+            battle_choice_6 = int(input("What do you do? \n 1. Take the shot \n 2. Wait for a clearer shot."))
+            if battle_choice_6 == 1:
+                print("You take the shot. Praying to Odin to send the Valkyries to guide your friend to Valhalla.")
+                reputation += 8
+                print("Your current health is:", health)
+                print("Your current reputaiton is:", reputation)
+                print("The horn of batttle echoes through the valley as the battle ends.")
+                print("The raid has ended. You have survived. Good work Viking.")
+            elif battle_choice_6 == 2:
+                print("You refuse, lowering your bow.")
+                print("Your commander is furious.")
+                reputation -= 8 
+                print("Your current repuation is: ", reputation)
+                print("The horn of batttle echoes through the valley as the battle ends.")
+                print("Despite your greivous error, your commander has let you live.")
+                print("You live to fight another day, Viking.")
+
 
 
         # play again
