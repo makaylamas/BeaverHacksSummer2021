@@ -1,3 +1,16 @@
+def axe():
+    # battle choices for weapon 1: axe
+    pass
+
+def sword():
+    # battle choices for weapon 2: sword
+   pass
+
+def longbow():
+    # battle choices for weapon 3: longbow
+    pass
+
+
 def game():
     while True:
         print("Welcome Warrior")
@@ -69,13 +82,23 @@ def game():
            print("The tension of anticipation builds with the clank of weapons against metal echoing through the valley. You nock an arrow, awaiting the battle horn")
 
         print("The battle horn sounds, the voices of war erupting in unison as the party pushes onwards.")
-            # game over when health == 0 or reputation == 0 
+         
+
+        if weapon_choice == 1:
+           axe()
+        elif weapon_choice == 2:
+            sword()
+        else:
+            longbow()
 
 
-        play_again = input("Would you like to play again, " + name + "? [yes/no]")
+        # play again
+        play_again = input("Would you like to play again? [yes/no]")
         if play_again == "yes" or "y":
             game()
         else:
             exit()
 
-        
+if __name__ == "__main__":
+    game()
+
